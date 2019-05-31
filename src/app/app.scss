@@ -1,0 +1,81 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.profile-image{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.bg{
+    background-image: url('../assets/imgs/fondoheader3.jpg');
+    height: 162px;
+    background-size: cover;      
+    background-position: center center;
+}
+.textp {
+    width: 30%;    
+    margin-left: 20px;    
+    margin-top: 90px;
+    
+  }
+.texti {
+    width: 30%;    
+    margin-left: 20px;    
+    margin-top: 4px;
+    
+  }
+  .texte{
+    width: 30%;  
+    margin-left: 8px;
+    margin-right: auto;
+    margin-top: -47px;
+  }
+  .dp{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    z-index: 10;
+    margin-top:-70px;
+    position: relative;
+    left:50%;
+    margin-right:-50%;
+    transform: translate(-50%,-50%);
+    box-shadow: -6px 15px 81px 3px rgba(0,0,0,0.75);
+  }
+  .texto1 {
+    font-size: 18px;   /* 2em = 2 x 10px = 20px */
+  }
+  ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="appname-pencil"] {
+        mask-image: url(../assets/pencil.svg);
+    }
+    &[class*="appname-exit"] {
+      mask-image: url(../assets/exit.svg);
+  }
+   
+}

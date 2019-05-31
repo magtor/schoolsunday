@@ -1,0 +1,47 @@
+<ion-menu id="menu1" [content]="miNav" padding  persistent = 'true'> 
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Perfil</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list no-lines>
+          <button ion-item menuClose="menu1" (click)="openPage('Perfil')" detail-none>
+             Perfil
+          </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-menu id="menu2" [content]="miNav" padding persistent = 'true'> 
+    <ion-header class="bg">
+    <div class="textp">  <h1 class="texto1" >Nombre</h1> </div>
+      <div class="texti">  <h1 class="texto1" >Email</h1> </div>
+      <div class="texte"><img src="../assets/imgs/dp.jpg" class="dp" (click)="openPage('Perfil')"></div>
+      
+    </ion-header> 
+        
+    <ion-content>
+      
+        <ion-list no-lines>
+          <button ion-item menuClose="menu2" (click)="openPage('Alumno')" detail-none>
+            Alumnos
+          </button>
+          <button ion-item menuClose="menu2" (click)="openPage('Productos')" detail-none>
+            Matricula
+         </button>
+          <button ion-item menuClose="menu2" (click)="openPage('Login')" detail-none>
+           Asistencia
+         </button>
+          <button ion-item menuClose="menu2" (click)="openPage('Tutor')" detail-none>
+           Tutores
+         </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #miNav></ion-nav>
+            
+
+

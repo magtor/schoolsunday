@@ -1,0 +1,75 @@
+<!--
+  Generated template for the UpdatealumnoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="twitter" hideBackButton="true" text-center>
+    <ion-title>Ficha De Alumno</ion-title>     
+    <ion-buttons end>
+     <button ion-button  icon-only (click)="cerrar()">
+        <ion-icon color="light" name="appname-exit"></ion-icon>
+     </button>   
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button  ion-button icon-only (click)="ShowTutors()">
+        <ion-icon color="light" name="appname-pencil"></ion-icon>
+      </button>
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>  
+      <div align="center" >         
+        <img class="profile-image" alt="" *ngIf="buttonClicked" src="assets/imgs/students.jpeg" (click)="ChangeImage()">
+        <img [src]="base64Image"  class="profile-image" *ngIf="base64Image" (click)="ChangeImage()" name="pathimage" [(ngModel)]="alumno.pathimage" />                    
+      </div>
+
+ <ion-item>
+  <ion-label stacked>Id Alumno</ion-label>
+    <ion-input placeholder="Id Alumno" [(ngModel)]="alumno.id"></ion-input>
+</ion-item> 
+<ion-item>
+  <ion-label stacked>Nombre</ion-label>
+    <ion-input placeholder="Nombre" [(ngModel)]="alumno.name"></ion-input>
+</ion-item> 
+<ion-item *ngIf="showtutores">
+  <ion-label stacked>Tutor</ion-label>
+     <ion-input placeholder="tutor" [(ngModel)]="tutor_name"></ion-input>
+</ion-item>
+<ion-item *ngIf="!showtutores">
+  <ion-label stacked>Tutor</ion-label>
+  <select-searchable
+        item-content
+        [(ngModel)]="tutor"
+        [items]="tutores"
+        itemValueField="id"
+        itemTextField="name"
+        resetButtonText="Clear selected"
+         [canClear]="true"
+        [canSearch]="true"
+        (onChange)="tutorChanged($event)">
+  </select-searchable>
+</ion-item>
+<ion-item> 
+  <ion-label>Fecha Nacimiento</ion-label>
+  <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="alumno.fechanacimiento"></ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Direccion</ion-label>
+    <ion-input  placeholder="Text Input" [(ngModel)]="alumno.direccion" type="string"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Telefono</ion-label>
+    <ion-input  placeholder="Text Input" [(ngModel)]="alumno.telefono" type="string"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Status</ion-label>
+    <ion-input  placeholder="Text Input" [(ngModel)]="alumno.status" ></ion-input>
+</ion-item>
+<button color="twitter" ion-button block (click)="UpdateAlumno()">Agregar</button>
+ 
+</ion-content>
